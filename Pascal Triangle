@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h> 
+
+
+int factorial(int number){         // faktoriyel almak için fonksiyon 
+int result = 1;
+for(int i = 1; i <= number; i++){
+    result *= i;
+}
+return result;
+}
+
+int combination(int n1,int n2){    // matematikteki kombinasyon işlemi için fonksiyon
+return factorial(n1)/(factorial(n2)*factorial(n1-n2));
+}
+
+void pascalDrawer (int rows){
+
+    for(int i = 0; i < rows; i++){
+        for(int k = i + 1 ; k <= rows - 1;k++)                              
+        printf("   "); //bosluklari tam düzgün ayarlamadim satir sayisi arttikca sayilarin basamak sayisi artiyor ve daha cok yer kaplamaya basliyorlar 
+            for(int j = 0; j <= i; j++){
+                printf("%d     ",combination(i,j));                //Paskal üçgeninin formülü en üst c(0,0) sol altındaki c(1,0)
+        }                                                           //                                       sağ altındaki c(1,1) 
+    printf("\n");                                                   //                                       diye gidiyor internette var                                                       
+    }
+}
+
+int main(){
+    pascalDrawer(10);
+}
