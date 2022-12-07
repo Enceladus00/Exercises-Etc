@@ -1,0 +1,19 @@
+#include <stdio.h>
+void evenSumMax(){
+int count, number, even_sum, even_max;
+    printf("How many integers? ");
+    scanf("%d",&count);
+    for(int i = 1; i <= count;i++){
+        printf("Next integer? ");
+        scanf("%d",&number);
+        if(number % 2 == 0){
+            even_sum += number;
+            if(number > even_max)
+                even_max = number;
+        }
+    }
+    printf("Even sum = %d, even max = %d",even_sum, even_max);
+}
+int main(){
+    evenSumMax();
+}
